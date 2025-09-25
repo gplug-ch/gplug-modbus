@@ -1,13 +1,5 @@
 # Makefile to build a Tasmota .tapp file
 
-# Load environment variables
-include .env
-
-# Validate required environment variables
-ifndef IP_TASMOTA_DEVICE
-    $(error IP_TASMOTA_DEVICE must be set! Use file '.env'!)
-endif
-
 # =============================================================================
 # CONFIGURATION
 # =============================================================================
@@ -41,9 +33,9 @@ TEST_SRC := $(shell cd $(TEST_DIR); ls test_*.be)
 .DEFAULT_GOAL := all
 .PHONY: all tapp zip upload clean help
 
-all: tapp
+all: clean tapp
 
-tapp: clean | $(BUILD_DIR)
+tapp: check-files | $(BUILD_DIR)
 	@echo "Building TAPP file: $(TAPP)"
 	@echo "Removing comments from source files..."
 	@for file in $(APP_SRC) $(RES_SRC); do \
@@ -93,7 +85,7 @@ endef
 # MAINTENANCE TARGETS
 # =============================================================================
 
-.PHONY: clean clean-backup
+.PHONY: clean check-file
 
 $(BUILD_DIR):
 	@mkdir -p $(BUILD_DIR)
@@ -103,3 +95,10 @@ clean:
 	@rm -rf $(BUILD_DIR)
 	@rm -rf $(CLIENT_DIR)/dist
 	@echo "Build directory cleaned"
+
+check-files:
+	@if [ -f .env ]; then \
+		echo "Found file '.env'"; \
+	else \
+		echo "No '.env' file found in current directory"; \
+	fi
