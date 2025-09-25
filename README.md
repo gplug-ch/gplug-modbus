@@ -37,12 +37,8 @@ Key features:
 
 2. **Upload the source files**
    - Upload the compressed `.tapp` file to the gPlug using the Tasmota web interface or other methods (eg. HTTP/MQTT)
-   - Make sure `UserInput.json` is present and correctly formatted.
    - To load the `.tapp` file correctly, restart the Berry-VM with `brrestart` in the tasmota console
 
-3. **Enable the Server**
-   - The Modbus-Server starts automatically after approx. 7.5 sec.
-   - You can stop and start the Mosbus-Server with `MB_Server.stop()` or `MB_Server.start()` in the berry console
 
 ### Build your own code
 
