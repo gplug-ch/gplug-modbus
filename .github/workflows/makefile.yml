@@ -19,7 +19,7 @@ jobs:
       run: |
         # Here you could download a prebuilt binary or clone and build Berry
         git clone https://github.com/berry-lang/berry.git
-        sudo apt-get install libreadline-dev lcov
+        sudo apt-get install build-essential libc6-dev
         cd berry
         make
 
