@@ -1,6 +1,6 @@
 # gplug‑modbus
 
-A lightweight Modbus-TCP server implementation for gPlug running on ESP32-C3 with Tasmota firmware, providing flexible user-configurable register mappings to serve SmartMeter and SunSpec protocol data efficiently.
+A lightweight Modbus-TCP server implementation for [gPlug](https://gplug.ch/) running on ESP32-C3 with Tasmota firmware, providing flexible user-configurable register mappings to serve SmartMeter and SunSpec protocol data efficiently.
 
 ## Table of Contents
 
