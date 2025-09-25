@@ -26,7 +26,7 @@ jobs:
 
     - name: Run tests
       run: |
-        export PATH=$PATH:$PWD
+        export PATH=$PATH:/Users/runner/work/gplug-modbus/gplug-modbus/berry
         make test
 
     - name: Run tapp on success
