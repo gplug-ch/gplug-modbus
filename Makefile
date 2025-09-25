@@ -12,9 +12,8 @@ endif
 # CONFIGURATION
 # =============================================================================
 
-APP_VERSION := 0.5.0
-VERSION := v$(APP_VERSION)
-TARGET := modbus-service
+VERSION := v$(shell cat VERSION.txt)
+TARGET := gplug-modbus
 
 # Base directories
 ROOT_DIR := .
