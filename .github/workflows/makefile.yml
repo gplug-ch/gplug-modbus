@@ -14,6 +14,14 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    # download and build the berry interpreter
+    - name: Install Berry interpreter
+      run: |
+        # Here you could download a prebuilt binary or clone and build Berry
+        git clone https://github.com/berry-lang/berry.git
+        cd berry
+        make
+
     - name: Run tests
       run: make test
 
