@@ -12,8 +12,8 @@ sunspec.init = def(m)
             self.working_dir = working_dir
             var f = nil
             try
-                f = open("my_sunspec.json", "r")
-                logger.logMsg(logger.lInfo, "File 'my_sunspec.json' loaded")
+                f = open("user-mapping.json", "r")
+                logger.logMsg(logger.lInfo, "File 'user-mapping.json' loaded")
             except .. as error
                 f = open(working_dir + "sunspec.json", "r")
                 logger.logMsg(logger.lInfo, "File 'sunspec.json' loaded")
