@@ -6,13 +6,13 @@ A lightweight Modbus-TCP server implementation for [gPlug](https://gplug.ch/) ru
 
 1. [Overview](#overview)  
 2. [Features](#features)  
-3. [Architecture & Concepts](#architecture--concepts)  
+3. [Architecture & Components](#architecture--components)  
 4. [Prerequisites](#prerequisites)  
 5. [Installation](#installation)  
 6. [Usage / Example](#usage--example)  
 7. [Configuration](#configuration)  
 8. [Building from Source](#building-from-source)  
-9. [Limitations & Future Work](#limitations--future-work)  
+9. [Limitations](#limitations)  
 10. [License](#license)  
 11. [References](#references)  
 
@@ -31,16 +31,21 @@ Typical use case: you have a gPlug running Tasmota + Berry support, and want to 
   - Standard SunSpec / device information models  
 - Lightweight, efficient, easily extendable  
 
-## Architecture & Concepts
+## Architecture & Components
 
-- **gPlug + Tasmota + Berry VM**  
-  The server is a Berry script executed inside Tasmota’s Berry VM.  
-- **Modbus model**  
-  Only function code 3 (read holding registers) is supported for now.  
-- **Mapping layer**  
-  The `user-mapping.json` file lets you map internal data / sensor values to Modbus register ranges.  
-- **Data source (SmartMeter / SunSpec devices)**  
-  The script reads local meter / inverter data (through Tasmota sensors, HTTP, or other built-in capabilities) and exposes them over Modbus as needed.
+The repository shows that the Berry application is organized into a set of script files:
+
+- `main.be` — entry point to start and stop the Modbus service, which is configured to automatically start after a system reboot.
+- `modbus.be` — handles Modbus request (json message), interacts with the smartmeter and composes the response.
+- `obiscode.be` — handles OBIS codes (the standard codes for metered values), mapping them to internal data fields.
+- `smartmeter.be` — logic for interacting with the SmartMeter, reading data via the local interface of gPlug.
+- `serversocket.be` - network socket handling (server listening).
+- `clientsocket.be` — network socket handling (client interactions).
+- `logger.be` — logging and diagnostics.
+- `middleware.be` - decodes and encodes the modbus messages to and from internal json messages.
+- `handlers.be` — routing and processing of the decoded requests, generates a json response for the middleware.
+- `constants.be` — definitions of fixed values, such as register offsets, scaling factors, etc.
+- `sunspec.json` - containing model definitions for SunSpec compatibility.
 
 ## Prerequisites
 
@@ -64,7 +69,7 @@ Typical use case: you have a gPlug running Tasmota + Berry support, and want to 
 You can test using a Modbus client, e.g. [`mbpoll`](https://github.com/epsilonrt/mbpoll).  
 
 ```bash
-mbpoll -v -t 4 -1 -0 -p 502 -a 201 -r 40070 -c 59 gplugk.local |   { while read R; do echo "$(date +%T\ %N) $R"; done }
+mbpoll -v -t 4 -1 -0 -p 502 -a 201 -r 40070 -c 59 gplugk.local
 ```
 
 This reads 59 holding registers starting at address 40070 from unit ID 201 on port 502 of `gplugk.local`.  
@@ -93,23 +98,16 @@ Include details like:
 If you want to build your own `.tapp`:
 
 ```bash
-# Requirements: GNU Make (v4.3+), Berry scripting sources
 make
 ```
 
 This produces the deployable `.tapp` file you can upload onto your gPlug.
 
-## Limitations & Future Work
+## Limitations
 
 - Currently only supports **Modbus function code 3** (read holding registers)  
-- No support for writing registers (function codes 6, 16, etc.)  
 - No automatic register discovery – user must configure mapping manually  
 - Error handling and diagnostics could be improved  
-- Expansion ideas:
-  - Support for more Modbus function codes  
-  - Auto-generate mapping from device metadata  
-  - Support multiple slave unit IDs  
-  - Integration with MQTT bridging  
 
 ## License
 
