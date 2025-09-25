@@ -23,7 +23,9 @@ jobs:
         make
 
     - name: Run tests
-      run: make test
+      run: |
+        export PATH=$PATH:.
+        make test
 
     - name: Run tapp on success
       if: success()  # Only runs if previous step succeeded
