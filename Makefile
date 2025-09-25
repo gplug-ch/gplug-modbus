@@ -20,9 +20,9 @@ TARGET := modbus-service
 ROOT_DIR := .
 
 # Directory structure
-BUILD_DIR := build
-APP_DIR := .
-TEST_DIR := ./tests
+BUILD_DIR := $(ROOT_DIR)/build
+APP_DIR := $(ROOT_DIR)
+TEST_DIR := $(ROOT_DIR)/tests
 
 # Output files
 TAPP := $(BUILD_DIR)/$(TARGET)-$(VERSION).tapp
@@ -104,9 +104,3 @@ clean:
 	@rm -rf $(BUILD_DIR)
 	@rm -rf $(CLIENT_DIR)/dist
 	@echo "Build directory cleaned"
-
-clean-backup:
-	@if [ -f $(BACKUP_FILE) ]; then \
-		echo "Removing backup file: $(BACKUP_FILE)"; \
-		rm -f $(BACKUP_FILE); \
-	fi
