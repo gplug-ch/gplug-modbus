@@ -27,7 +27,7 @@ Typical use case: you have a gPlug running Tasmota + Berry support, and want to 
 == Features
 
 * Implements Modbus TCP, *function code 3 (Read Holding Registers)*
-* Runs entirely within Berry Script / Tasmota on the gPlug — no external hardware
+* Runs entirely within Berry Script / Tasmota on the gPlug:: no external hardware
 * User-definable mapping (via `user-mapping.json`) to adapt to:
 ** Proprietary registers from your SmartMeter device
 ** Standard SunSpec / device information models
@@ -37,17 +37,17 @@ Typical use case: you have a gPlug running Tasmota + Berry support, and want to 
 
 The repository shows that the Berry application is organized into a set of script files:
 
-`main.be` — entry point to start and stop the Modbus service, which is configured to automatically start after a system reboot. +
-`modbus.be` — handles Modbus request (json message), interacts with the smartmeter and composes the response. +
-`obiscode.be` — handles OBIS codes (the standard codes for metered values), mapping them to internal data fields. +
-`smartmeter.be` — logic for interacting with the SmartMeter, reading data via the local interface of gPlug. +
-`serversocket.be` - network socket handling (server listening). +
-`clientsocket.be` — network socket handling (client interactions). +
-`logger.be` — logging and diagnostics. +
-`middleware.be` - decodes and encodes the modbus messages to and from internal json messages. +
-`handlers.be` — routing and processing of the decoded requests, generates a json response for the middleware. +
-`constants.be` — definitions of fixed values, such as register offsets, scaling factors, etc. +
-`sunspec.json` - containing model definitions for SunSpec compatibility.
+`main.be`:: entry point to start and stop the Modbus service, which is configured to automatically start after a system reboot.
+`modbus.be`:: handles Modbus request (json message), interacts with the smartmeter and composes the response.
+`obiscode.be`:: handles OBIS codes (the standard codes for metered values), mapping them to internal data fields.
+`smartmeter.be`:: logic for interacting with the SmartMeter, reading data via the local interface of gPlug.
+`serversocket.be`:: network socket handling (server listening).
+`clientsocket.be`:: network socket handling (client interactions).
+`logger.be`:: logging and diagnostics.
+`middleware.be`:: decodes and encodes the modbus messages to and from internal json messages.
+`handlers.be`:: routing and processing of the decoded requests, generates a json response for the middleware.
+`constants.be`:: definitions of fixed values, such as register offsets, scaling factors, etc.
+`sunspec.json`:: containing model definitions for SunSpec compatibility.
 
 == Prerequisites
 
@@ -63,7 +63,7 @@ Use Tasmota's web UI or other interfaces (HTTP, MQTT, etc.) to upload the compre
 . *Restart Berry VM* +
 After uploading, run `brrestart` from the Tasmota console to load the script.
 
-. *Place mapping file* +
+. *Place mapping file* (Optional) +
 Add your `user-mapping.json` (copied/modified from the template) into the correct directory so that the script can load it.
 
 == Usage / Example
@@ -94,23 +94,23 @@ Include details like:
 * *Scaling* or units
 * *Description* / label
 
-*NOTE:* If no user-specific mapping file is provided, the default link:./sunspec.json[`sunspec.json`] will be used
+*NOTE:* If no user-specific mapping file is provided, the internal file link:./sunspec.json[`sunspec.json`] will be used
 
 == Building from Source
 
-If you want to build your own `.tapp`:
+If you want to build your own `.tapp` just tpye:
 
 [source,bash]
 ----
 make
 ----
 
-This produces the deployable `.tapp` file you can upload onto your gPlug.
+This produces in your `build` directory the deployable `.tapp` file you can upload onto your gPlug.
 
 == Limitations
 
 * Currently only supports *Modbus function code 3* (read holding registers)
-* No automatic register discovery – user must configure mapping manually
+* No automatic register discovery – the user must either configure the mapping manually or rely on the default `sunspec.json`
 * Error handling and diagnostics could be improved
 
 == License
