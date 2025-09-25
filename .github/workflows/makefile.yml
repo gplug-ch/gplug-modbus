@@ -24,7 +24,7 @@ jobs:
 
     - name: Run tests
       run: |
-        export PATH=$PATH:.
+        export PATH=$(PATH):$(PWD)
         make test
 
     - name: Run tapp on success
