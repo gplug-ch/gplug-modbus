@@ -6,17 +6,17 @@ A lightweight Modbus-TCP server implementation for https://gplug.ch/[gPlug] runn
 
 == Table of Contents
 
-. <<overview,Overview>>
-. <<features,Features>>
-. <<architecture-components,Architecture & Components>>
-. <<prerequisites,Prerequisites>>
-. <<installation,Installation>>
-. <<usage-example,Usage / Example>>
-. <<configuration,Configuration>>
-. <<building-from-source,Building from Source>>
-. <<limitations,Limitations>>
-. <<license,License>>
-. <<references,References>>
+<<overview,Overview>> +
+<<features,Features>> +
+<<architecture-components,Architecture & Components>> +
+<<prerequisites,Prerequisites>> +
+<<installation,Installation>> +
+<<usage-example,Usage / Example>> +
+<<configuration,Configuration>> +
+<<building-from-source,Building from Source>> +
+<<limitations,Limitations>> +
+<<license,License>> +
+<<references,References>> +
 
 == Overview
 
@@ -29,7 +29,7 @@ Typical use case: you have a gPlug running Tasmota + Berry support, and want to 
 * Implements Modbus TCP, *function code 3 (Read Holding Registers)*
 * Runs entirely within Berry Script / Tasmota on the gPlug — no external hardware
 * User-definable mapping (via `user-mapping.json`) to adapt to:
-**Proprietary registers from your SmartMeter or device
+** Proprietary registers from your SmartMeter device
 ** Standard SunSpec / device information models
 * Lightweight, efficient, easily extendable
 
@@ -37,36 +37,33 @@ Typical use case: you have a gPlug running Tasmota + Berry support, and want to 
 
 The repository shows that the Berry application is organized into a set of script files:
 
-* `main.be` — entry point to start and stop the Modbus service, which is configured to automatically start after a system reboot.
-* `modbus.be` — handles Modbus request (json message), interacts with the smartmeter and composes the response.
-* `obiscode.be` — handles OBIS codes (the standard codes for metered values), mapping them to internal data fields.
-* `smartmeter.be` — logic for interacting with the SmartMeter, reading data via the local interface of gPlug.
-* `serversocket.be` - network socket handling (server listening).
-* `clientsocket.be` — network socket handling (client interactions).
-* `logger.be` — logging and diagnostics.
-* `middleware.be` - decodes and encodes the modbus messages to and from internal json messages.
-* `handlers.be` — routing and processing of the decoded requests, generates a json response for the middleware.
-* `constants.be` — definitions of fixed values, such as register offsets, scaling factors, etc.
-* `sunspec.json` - containing model definitions for SunSpec compatibility.
+`main.be` — entry point to start and stop the Modbus service, which is configured to automatically start after a system reboot. +
+`modbus.be` — handles Modbus request (json message), interacts with the smartmeter and composes the response. +
+`obiscode.be` — handles OBIS codes (the standard codes for metered values), mapping them to internal data fields. +
+`smartmeter.be` — logic for interacting with the SmartMeter, reading data via the local interface of gPlug. +
+`serversocket.be` - network socket handling (server listening). +
+`clientsocket.be` — network socket handling (client interactions). +
+`logger.be` — logging and diagnostics. +
+`middleware.be` - decodes and encodes the modbus messages to and from internal json messages. +
+`handlers.be` — routing and processing of the decoded requests, generates a json response for the middleware. +
+`constants.be` — definitions of fixed values, such as register offsets, scaling factors, etc. +
+`sunspec.json` - containing model definitions for SunSpec compatibility.
 
 == Prerequisites
 
-* gPlug device running Tasmota (version ≥ 14.5.0) with Berry scripting enabled
-* A SmartMeter (or inverter, sensor, etc.) from which you can read data (e.g. via MQTT / HTTP / sensor interfaces)
-* Some familiarity with Modbus, register mapping, and JSON configuration
+- gPlug device running Tasmota (version ≥ 14.5.0) with Berry scripting enabled +
+- A SmartMeter (or inverter, sensor, etc.) from which you can read data (e.g. via MQTT / HTTP / sensor interfaces) +
+- Some familiarity with Modbus, register mapping, and JSON configuration +
 
 == Installation
 
-. *Upload `.tapp` file*
-+
+. *Upload `.tapp` file* +
 Use Tasmota's web UI or other interfaces (HTTP, MQTT, etc.) to upload the compressed `.tapp` file.
 
-. *Restart Berry VM*
-+
+. *Restart Berry VM* +
 After uploading, run `brrestart` from the Tasmota console to load the script.
 
-. *Place mapping file*
-+
+. *Place mapping file* +
 Add your `user-mapping.json` (copied/modified from the template) into the correct directory so that the script can load it.
 
 == Usage / Example
