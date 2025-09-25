@@ -1,0 +1,611 @@
+{
+    "40000": {
+        "name": "SunSpec Identifier",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": "5375"
+    },
+    "40001": {
+        "name": "SunSpec Identifier",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": "6E53"
+    },
+    "40002": {
+        "name": "C_ID",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": "1"
+    },
+    "40003": {
+        "name": "C_L",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": "65"
+    },
+    "40004": {
+        "name": "C_Mn",
+        "type": "string",
+        "size": 16,
+        "obis_code": "",
+        "fixed_value": "GantrischEnergieAG"
+    },
+    "40020": {
+        "name": "C_Md",
+        "type": "string",
+        "size": 16,
+        "obis_code": "",
+        "fixed_value": "gPlugD"
+    },
+    "40036": {
+        "name": "C_Opt",
+        "type": "string",
+        "size": 8,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40044": {
+        "name": "C_Vr",
+        "type": "string",
+        "size": 8,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40052": {
+        "name": "C_SN",
+        "type": "string",
+        "size": 16,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40068": {
+        "name": "C_DA",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40069": {
+        "name": "Alignment",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": "FFFF"
+    },
+    "40070": {
+        "name": "M_SunSpecID",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": "201"
+    },
+    "40071": {
+        "name": "M_Length",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": "105"
+    },
+    "40072": {
+        "name": "Amps",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40073": {
+        "name": "I1",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "31.7.0",
+        "fixed_value": ""
+    },
+    "40074": {
+        "name": "I2",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "51.7.0",
+        "fixed_value": ""
+    },
+    "40075": {
+        "name": "I3",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "71.7.0",
+        "fixed_value": ""
+    },
+    "40076": {
+        "name": "I_SF",
+        "type": "sunssf",
+        "size": 1,
+        "obis_code": "f",
+        "fixed_value": "-3"
+    },
+    "40077": {
+        "name": "Voltage_LN",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40078": {
+        "name": "V1",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "32.7.0",
+        "fixed_value": ""
+    },
+    "40079": {
+        "name": "V2",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "52.7.0",
+        "fixed_value": ""
+    },
+    "40080": {
+        "name": "V3",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "72.7.0",
+        "fixed_value": ""
+    },
+    "40081": {
+        "name": "PPV",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40082": {
+        "name": "PPVphAB",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40083": {
+        "name": "PPVphBC",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40084": {
+        "name": "PPVphCA",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40085": {
+        "name": "V_SF",
+        "type": "sunssf",
+        "size": 1,
+        "obis_code": "f",
+        "fixed_value": ""
+    },
+    "40086": {
+        "name": "Hz",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40087": {
+        "name": "Hz_SF",
+        "type": "sunssf",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40088": {
+        "name": "Pi",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "1.7.0",
+        "fixed_value": ""
+    },
+    "40089": {
+        "name": "P1i",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "21.7.0",
+        "fixed_value": ""
+    },
+    "40090": {
+        "name": "P2i",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "41.7.0",
+        "fixed_value": ""
+    },
+    "40091": {
+        "name": "P3i",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "61.7.0",
+        "fixed_value": ""
+    },
+    "40092": {
+        "name": "P_SF",
+        "type": "sunssf",
+        "size": 1,
+        "obis_code": "f",
+        "fixed_value": "-3"
+    },
+    "40093": {
+        "name": "VA",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40094": {
+        "name": "VAphA",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40095": {
+        "name": "VAphB",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40096": {
+        "name": "VAphC",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40097": {
+        "name": "VA_SF",
+        "type": "sunssf",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40098": {
+        "name": "VAR",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "3.7.0",
+        "fixed_value": ""
+    },
+    "40099": {
+        "name": "VARphA",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40100": {
+        "name": "VARphB",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40101": {
+        "name": "VARphC",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40102": {
+        "name": "VAR_SF",
+        "type": "sunssf",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40103": {
+        "name": "PF",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40104": {
+        "name": "PFphA",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "33.7.0",
+        "fixed_value": ""
+    },
+    "40105": {
+        "name": "PFphB",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40106": {
+        "name": "PFphC",
+        "type": "int16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40107": {
+        "name": "PF_SF",
+        "type": "sunssf",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40108": {
+        "name": "Eo",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "2.8.0",
+        "fixed_value": ""
+    },
+    "40110": {
+        "name": "TotWhExpPhA",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40112": {
+        "name": "TotWhExpPhB",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40114": {
+        "name": "TotWhExpPhC",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40116": {
+        "name": "Ei",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "1.8.0",
+        "fixed_value": ""
+    },
+    "40118": {
+        "name": "TotWhImpPhA",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40120": {
+        "name": "TotWhImpPhB",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40122": {
+        "name": "TotWhImpPhC",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40124": {
+        "name": "TotWh_SF",
+        "type": "sunssf",
+        "size": 1,
+        "obis_code": "f",
+        "fixed_value": ""
+    },
+    "40125": {
+        "name": "TotVAhExp",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40127": {
+        "name": "TotVAhExpPhA",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40129": {
+        "name": "TotVAhExpPhB",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40131": {
+        "name": "TotVAhExpPhC",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40133": {
+        "name": "TotVAhImp",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40135": {
+        "name": "TotVAhImpPhA",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40137": {
+        "name": "TotVAhImpPhB",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40139": {
+        "name": "TotVAhImpPhC",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40141": {
+        "name": "TotVAh_SF",
+        "type": "sunssf",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40142": {
+        "name": "TotVArhImpQ1",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "3.8.0",
+        "fixed_value": ""
+    },
+    "40144": {
+        "name": "TotVArhImpQ1PhA",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40146": {
+        "name": "TotVArhImpQ1PhB",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40148": {
+        "name": "TotVArhImpQ1PhC",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40150": {
+        "name": "TotVArhImpQ2",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40152": {
+        "name": "TotVArhImpQ2PhA",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40154": {
+        "name": "TotVArhImpQ2PhB",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40156": {
+        "name": "TotVArhImpQ2PhC",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40158": {
+        "name": "TotVArhExpQ3",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "4.8.0",
+        "fixed_value": ""
+    },
+    "40160": {
+        "name": "TotVArhExpQ3PhA",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40162": {
+        "name": "TotVArhExpQ3PhB",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40164": {
+        "name": "TotVArhExpQ3PhC",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40166": {
+        "name": "TotVArhExpQ4",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40168": {
+        "name": "TotVArhExpQ4PhA",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40170": {
+        "name": "TotVArhExpQ4PhB",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40172": {
+        "name": "TotVArhExpQ4PhC",
+        "type": "acc32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40174": {
+        "name": "TotVArh_SF",
+        "type": "sunssf",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40175": {
+        "name": "Evt",
+        "type": "bitfield32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40177": {
+        "name": "EndModel_ID",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": "FFFF"
+    },
+    "40178": {
+        "name": "EndModel_Length",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": "0"
+    }
+}
