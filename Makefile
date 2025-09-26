@@ -35,12 +35,11 @@ TEST_SRC := $(shell cd $(TEST_DIR); ls test_*.be)
 
 all: clean tapp
 
-tapp: check-files | $(BUILD_DIR)
+tapp: $(BUILD_DIR)
 	@echo "Building TAPP file: $(TAPP)"
-	@echo "Removing comments from source files..."
-	@for file in $(APP_SRC) $(RES_SRC); do \
-		sed '/^[[:space:]]*#/d; /^\s*\/\//d; s/\/\*.*\*\///g' "$$file" > "$(BUILD_DIR)/$$(basename "$$file")"; \
-	done
+	$(call check-file-env)
+	$(call remove-comments)
+	$(call trim-json)
 	zip -0 -j $(TAPP) $(BUILD_DIR)/*
 	@echo "TAPP file created successfully: $(TAPP)"
 
@@ -81,11 +80,34 @@ define restart-berry
 	@exit_code=$$?; echo "Restart completed with exit code: $$exit_code"
 endef
 
+# Removing comments from source files
+define remove-comments
+	@for file in $(APP_SRC); do \
+		sed '/^[[:space:]]*#/d; /^\s*\/\//d; s/\/\*.*\*\///g' "$$file" > "$(BUILD_DIR)/$$(basename "$$file")"; \
+	done
+endef
+
+# Removing whitespaces at the beginning and end og json files
+define trim-json
+	@for file in $(RES_SRC); do \
+		sed 's/^[[:space:]]*//;s/[[:space:]]*$///g' "$$file" > "$(BUILD_DIR)/$$(basename "$$file")"; \
+	done
+endef
+
+# Check if .env file exists
+define check-file-env
+	@if [ -f .env ]; then \
+		echo  "Found file '.env'"; \
+	else \
+		echo  "No '.env' file found in current directory"; \
+	fi
+endef
+
 # =============================================================================
 # MAINTENANCE TARGETS
 # =============================================================================
 
-.PHONY: clean check-file
+.PHONY: clean
 
 $(BUILD_DIR):
 	@mkdir -p $(BUILD_DIR)
@@ -96,9 +118,3 @@ clean:
 	@rm -rf $(CLIENT_DIR)/dist
 	@echo "Build directory cleaned"
 
-check-files:
-	@if [ -f .env ]; then \
-		echo "Found file '.env'"; \
-	else \
-		echo "No '.env' file found in current directory"; \
-	fi
