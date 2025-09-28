@@ -78,6 +78,63 @@ mbpoll -v -t 4 -1 -0 -p 502 -a 201 -r 40070 -c 59 gplugk.local
 This reads 59 holding registers starting at address 40070 from unit ID 201 on port 502 of `gplugk.local`.
 (Adapt the addresses, count, unit ID, etc. based on your mapping and environment.)
 
+== Testing
+
+=== Unit Tests
+
+==== Prerequisites
+
+https://berry.readthedocs.io/en/latest/source/en/Chapter-1.html#get-interpreter[Berry VM] must be installed and configured on your local machine .
+
+==== Running the Tests
+You can run unit tests for individual components by executing the `test.be` script in the Berry environment. This script includes test cases for functions in `handler.be`, `middleware.be` and `modbus.be`. 
+
+[source,bash]
+----
+make test
+----
+
+*Note*: File `tests/tasmota.be` contains mock implementations of Tasmota functions used in the tests.
+
+=== Integration Tests
+
+==== Prerequisites
+
+https://github.com/epsilonrt/mbpoll[mbpoll] nust be installed on your local machine.
+
+==== Running the Tests
+For end-to-end testing, you can use a Modbus client like `mbpoll` to send requests to the gPlug and verify the responses. Use the python script `load_test.py` to simulate multiple concurrent Modbus requests and check for correct behavior under load.
+
+Verify that python is installed, then run:
+
+[source,bash]
+----
+cd tools/load_test
+python load_test.py -h
+usage: load_test.py [-h] [--host HOST] [--port PORT] [--slave-id SLAVE_ID] [--register REGISTER]
+                    [--count COUNT] [--threads THREADS] [--tests-per-thread TESTS_PER_THREAD]
+                    [--sequential-tests SEQUENTIAL_TESTS] [--delay DELAY] [--output OUTPUT]
+                    [--quiet]
+
+Load test mbpoll Modbus command
+
+options:
+  -h, --help            show this help message and exit
+  --host HOST           Target host (default: gplugk.local)
+  --port PORT           Port number (default: 502)
+  --slave-id SLAVE_ID   Slave ID (default: 201)
+  --register REGISTER   Register address (default: 40070)
+  --count COUNT         Number of registers (default: 59)
+  --threads THREADS     Number of concurrent threads (default: 1)
+  --tests-per-thread TESTS_PER_THREAD
+                        Tests per thread (default: 1)
+  --sequential-tests SEQUENTIAL_TESTS
+                        Run N tests sequentially instead of concurrent
+  --delay DELAY         Delay between tests in seconds (default: 0)
+  --output OUTPUT       Save detailed results to JSON file
+  --quiet               Disable verbose output from mbpoll
+----
+
 == Configuration
 
 This JSON file defines which internal data values map to which Modbus registers (addresses, types, scaling, etc.).
