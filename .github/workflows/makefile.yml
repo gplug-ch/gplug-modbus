@@ -24,6 +24,8 @@ jobs:
         git clone https://github.com/berry-lang/berry.git
         cd berry
         make
+        pwd
+        ls
 
     - name: Run tests
       run: |
