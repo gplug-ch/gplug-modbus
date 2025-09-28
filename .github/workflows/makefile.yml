@@ -24,11 +24,15 @@ jobs:
         git clone https://github.com/berry-lang/berry.git
         cd berry
         make
+        pwd
         chmod +x berry
+        ln -s `pwd`/berry /usr/local/bin/berry  # make berry globally accessible
 
     - name: Run tests
       run: |
-        export PATH=$PATH:/Users/runner/work/gplug-modbus/gplug-modbus/berry
+        export PATH=$PATH:`pwd`/berry
+        echo $PATH
+        berry --version
         make test
 
     - name: Run tapp on success
