@@ -12,6 +12,7 @@ A lightweight Modbus-TCP server implementation for https://gplug.ch/[gPlug] runn
 <<prerequisites,Prerequisites>> +
 <<installation,Installation>> +
 <<usage-example,Usage / Example>> +
+<<testing,Testing>> +
 <<configuration,Configuration>> +
 <<building-from-source,Building from Source>> +
 <<limitations,Limitations>> +
