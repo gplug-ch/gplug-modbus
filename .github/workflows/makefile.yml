@@ -30,9 +30,6 @@ jobs:
 
     - name: Run tests
       run: |
-        export PATH=$PATH:`pwd`/berry
-        echo $PATH
-        berry --version
         make test
 
     - name: Run tapp on success
