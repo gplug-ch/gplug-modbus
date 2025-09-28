@@ -8,11 +8,14 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+
+    - name: Install a package
+      run: apt-get install libreadline-dev
 
     # download and build the berry interpreter
     - name: Install Berry interpreter
