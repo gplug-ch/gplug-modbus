@@ -8,7 +8,7 @@ logger.lWarn  = 2
 logger.lDebug = 3
 logger.lMore  = 4
 
-var level = 3     # range from 0 (Off) .. 5  (More)
+var level = 2     # range from 0 (Off) .. 5  (More)
 var hexShort = 0
 var hexFull  = 1
 var ASCII    = 2

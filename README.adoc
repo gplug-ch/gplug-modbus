@@ -11,9 +11,9 @@ A lightweight Modbus-TCP server implementation for https://gplug.ch/[gPlug] runn
 <<architecture-components,Architecture & Components>> +
 <<prerequisites,Prerequisites>> +
 <<installation,Installation>> +
+<<configuration,Configuration>> +
 <<usage-example,Usage / Example>> +
 <<testing,Testing>> +
-<<configuration,Configuration>> +
 <<building-from-source,Building from Source>> +
 <<limitations,Limitations>> +
 <<license,License>> +
@@ -67,9 +67,27 @@ After uploading, run `brrestart` from the Tasmota console to load the script.
 . *Place mapping file* (Optional) +
 Add your `user-mapping.json` (copied/modified from the template) into the correct directory so that the script can load it.
 
+== Configuration
+
+the JSON file link:./sunspec.json[`sunspec.json`] - or your file `user-mapping.json` - defines which internal data values map to which Modbus registers (addresses, types, scaling, etc.).
+
+You should base your mapping on either:
+
+* Your device's proprietary registers / data points
+* The *SunSpec Device Information Model*, if compatible
+
+Include details like:
+
+* Modbus *address* / offset
+* Data *type* (e.g. unsigned, signed, float, etc.)
+* *Scaling* or units
+* *Description* / label
+
+*NOTE:* If no user-specific mapping file is provided, the internal file link:./sunspec.json[`sunspec.json`] will be used
+
 == Usage / Example
 
-You can test using a Modbus client, e.g. https://github.com/epsilonrt/mbpoll[`mbpoll`].
+You can interact with the Modbus-TCP server using a Modbus client, e.g. https://github.com/epsilonrt/mbpoll[`mbpoll`].
 
 [source,bash]
 ----
@@ -135,24 +153,6 @@ options:
   --output OUTPUT       Save detailed results to JSON file
   --quiet               Disable verbose output from mbpoll
 ----
-
-== Configuration
-
-This JSON file defines which internal data values map to which Modbus registers (addresses, types, scaling, etc.).
-
-You should base your mapping on either:
-
-* Your device's proprietary registers / data points
-* The *SunSpec Device Information Model*, if compatible
-
-Include details like:
-
-* Modbus *address* / offset
-* Data *type* (e.g. unsigned, signed, float, etc.)
-* *Scaling* or units
-* *Description* / label
-
-*NOTE:* If no user-specific mapping file is provided, the internal file link:./sunspec.json[`sunspec.json`] will be used
 
 == Building from Source
 
