@@ -60,7 +60,7 @@ class ClientSocket
     end
 
     def shutdown()
-        if self.socket!= nil
+        if self.socket != nil
             logger.logMsg(logger.lDebug, f"ClientSocket '{self.id}' closed")
             self.socket.close()
             self.socket = nil
@@ -75,7 +75,7 @@ class ClientSocket
 end
 
 clientsocket.start = def(socket)
-    ClientSocket(socket)
+    return ClientSocket(socket)
 end
 
 return clientsocket

@@ -15,8 +15,14 @@ sunspec.init = def(m)
                 f = open("user-mapping.json", "r")
                 logger.logMsg(logger.lInfo, "File 'user-mapping.json' loaded")
             except .. as error
-                f = open(working_dir + "sunspec.json", "r")
-                logger.logMsg(logger.lInfo, "File 'sunspec.json' loaded")
+                try
+                    f = open(working_dir + "sunspec.json", "r")
+                    logger.logMsg(logger.lInfo, "File 'sunspec.json' loaded")
+                except .. as error2
+                    logger.logMsg(logger.lWarn, "No mapping file found, using empty registers")
+                    self.registers = {}
+                    return
+                end
             end
             var js = f.read()
             self.registers = json.load(js)

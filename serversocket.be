@@ -54,6 +54,13 @@ end
 
 
 serversocket.start = def(server_port)
+    # Prevent double-start: clean up existing server first
+    if server != nil
+        logger.logMsg(logger.lWarn, "Server already running, stopping existing instance")
+        server.shutdown()
+        server = nil
+    end
+
     server = ServerSocket(server_port)
     if server.listener == nil
         return false

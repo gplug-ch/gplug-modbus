@@ -9,8 +9,14 @@ import modbus
 # Decode shall return a map with either "request" or "error"
 #
 middleware.decode = def(msg)
-    
+    var MAX_REGISTERS = 125  # Modbus spec limit for function code 3
+
     def decode_mbap(msg)
+        # Validate minimum message length (MBAP header is 7 bytes + at least 1 byte PDU)
+        if msg.size() < 8
+            return {"request": nil, "error": constants.APP_EXCEPTION_CODES}
+        end
+
         var request = map()
 
         request.insert("transaction_id", msg[0..1])
@@ -34,11 +40,16 @@ middleware.decode = def(msg)
         request.insert("start_reg", pdu[1..2].get(0,-2)) # register address space starts with 0
         request.insert("nr_of_reg", pdu[3..4].get(0,-2))
 
-        if (request.item("fun_code") == bytes("03"))
-            return msg
-        else
+        if (request.item("fun_code") != bytes("03"))
             return {"request": request, "error": constants.MODBUS_EXCEPTION_CODES["01"]}
         end
+
+        # Validate register count (Modbus spec limit: 125 for function code 3)
+        if request.item("nr_of_reg") > MAX_REGISTERS || request.item("nr_of_reg") < 1
+            return {"request": request, "error": constants.MODBUS_EXCEPTION_CODES["03"]}
+        end
+
+        return msg
     end
 
     # Check msg
@@ -73,7 +84,12 @@ middleware.encode = def(msg)
         var data = bytes()
         for reg: registers
             var val = modbus.get_value_of_register(str(reg['key']))
-            data = data .. val.item("bytes")
+            if val != nil && val.item("bytes") != nil
+                data = data .. val.item("bytes")
+            else
+                # Return zero bytes for unknown registers
+                data = data .. bytes("0000")
+            end
         end
         return data
     end
