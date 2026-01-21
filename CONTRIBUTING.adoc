@@ -1,0 +1,162 @@
+= Contributing to gplug-modbus
+
+Thank you for your interest in contributing to gplug-modbus! This document provides guidelines for contributing to this project.
+
+== Getting Started
+
+=== Prerequisites
+
+* https://berry.readthedocs.io/en/latest/source/en/Chapter-1.html#get-interpreter[Berry VM] installed locally for running tests
+* https://github.com/epsilonrt/mbpoll[mbpoll] for integration testing (optional)
+* Basic familiarity with Modbus protocol and Berry scripting language
+
+=== Development Setup
+
+. Fork the repository on GitHub
+. Clone your fork locally:
++
+[source,bash]
+----
+git clone https://github.com/YOUR_USERNAME/gplug-modbus.git
+cd gplug-modbus
+----
+
+. Run the tests to verify your setup:
++
+[source,bash]
+----
+make test
+----
+
+. Build the project:
++
+[source,bash]
+----
+make
+----
+
+== How to Contribute
+
+=== Reporting Issues
+
+==== Bug Reports
+
+When reporting bugs, please include:
+
+* Tasmota version and gPlug hardware details
+* Steps to reproduce the issue
+* Expected vs. actual behavior
+* Relevant logs from Tasmota console
+* Your `user-mapping.json` configuration (if applicable)
+
+==== Feature Requests
+
+Feature requests are welcome. Please describe:
+
+* The use case or problem you're trying to solve
+* Your proposed solution (if any)
+* Any alternatives you've considered
+
+=== Submitting Pull Requests
+
+. Create a new branch for your changes:
++
+[source,bash]
+----
+git checkout -b feature/your-feature-name
+----
+
+. Make your changes, following the <<code-style,Code Style>> guidelines
+
+. Run tests locally:
++
+[source,bash]
+----
+make test
+----
+
+. Commit your changes with a descriptive message (see <<commit-messages,Commit Messages>>)
+
+. Push to your fork and create a Pull Request
+
+. In your PR description:
+** Describe what the PR does
+** Reference any related issues (e.g., "Fixes #123")
+** Include testing steps if applicable
+
+[[code-style]]
+== Development Guidelines
+
+=== Code Style
+
+* Use the module pattern for all components (`module("modulename")`)
+* Follow existing naming conventions:
+** Classes: `PascalCase`
+** Functions/methods: `snake_case`
+** Variables: `snake_case`
+** Constants: `UPPER_SNAKE_CASE`
+* Keep functions focused and small
+* Add comments only where logic isn't self-evident
+
+=== Architecture
+
+See link:CLAUDE.md[CLAUDE.md] for detailed architecture documentation. Key patterns:
+
+* *Tasmota Driver Pattern:* Use `tasmota.add_driver()` for periodic execution
+* *Singleton Pattern:* Used in `smartmeter.be` and `sunspec.be`
+* *Module Pattern:* All components use `module()` for namespacing
+
+=== Testing Requirements
+
+* Run `make test` before submitting any PR
+* Add unit tests for new functionality in the `tests/` directory
+* If possible, test on an actual gPlug device
+* Use `tools/load_test/load_test.py` for integration testing
+
+[[commit-messages]]
+=== Commit Messages
+
+Use conventional commit format:
+
+[source]
+----
+type: short description
+
+Optional longer description if needed.
+----
+
+Types:
+
+* `feat:` - New feature
+* `fix:` - Bug fix
+* `docs:` - Documentation changes
+* `refactor:` - Code refactoring without functionality changes
+* `test:` - Adding or modifying tests
+* `chore:` - Build process or auxiliary tool changes
+
+Examples:
+
+[source]
+----
+feat: add support for function code 6 (write single register)
+fix: handle connection timeout in clientsocket
+docs: update installation instructions
+----
+
+== Code of Conduct
+
+This project is licensed under Apache-2.0. We expect all contributors to:
+
+* Be respectful and professional in all communications
+* Accept constructive feedback gracefully
+* Focus on what is best for the project and community
+
+== Questions?
+
+If you have questions:
+
+* Open an issue on GitHub for technical questions
+* Check existing issues and documentation first
+* Reference link:README.adoc[README.adoc] for project overview and usage
+
+Thank you for contributing!
