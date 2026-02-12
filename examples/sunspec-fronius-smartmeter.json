@@ -1,0 +1,541 @@
+{
+    "40000": {
+        "name": "SunSpec Identifier",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": "5375"
+    },
+    "40001": {
+        "name": "SunSpec Identifier",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": "6E53"
+    },
+    "40002": {
+        "name": "C_ID",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": "1"
+    },
+    "40003": {
+        "name": "C_L",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": "65"
+    },
+    "40004": {
+        "name": "C_Mn",
+        "type": "string",
+        "size": 16,
+        "obis_code": "",
+        "fixed_value": "Fronius"
+    },
+    "40020": {
+        "name": "C_Md",
+        "type": "string",
+        "size": 16,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40036": {
+        "name": "C_Opt",
+        "type": "string",
+        "size": 8,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40044": {
+        "name": "C_Vr",
+        "type": "string",
+        "size": 8,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40052": {
+        "name": "C_SN",
+        "type": "string",
+        "size": 16,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40068": {
+        "name": "C_DA",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40069": {
+        "name": "Alignment",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": "FFFF"
+    },
+    "40070": {
+        "name": "M213_ID",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": "213"
+    },
+    "40071": {
+        "name": "M213_L",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": "124"
+    },
+    "40072": {
+        "name": "Amps",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40074": {
+        "name": "Amps PhaseA",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40076": {
+        "name": "Amps PhaseB",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40078": {
+        "name": "Amps PhaseC",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40080": {
+        "name": "Voltage LN",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40082": {
+        "name": "Phase Voltage AN",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40084": {
+        "name": "Phase Voltage BN",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40086": {
+        "name": "Phase Voltage CN",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40088": {
+        "name": "Voltage LL",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40090": {
+        "name": "Phase Voltage AB",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40092": {
+        "name": "Phase Voltage BC",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40094": {
+        "name": "Phase Voltage CA",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40096": {
+        "name": "Hz",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40098": {
+        "name": "Watts",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40100": {
+        "name": "Watts phase A",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40102": {
+        "name": "Watts phase B",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40104": {
+        "name": "Watts phase C",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40106": {
+        "name": "VA",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40108": {
+        "name": "VA phase A",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40110": {
+        "name": "VA phase B",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40112": {
+        "name": "VA phase C",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40114": {
+        "name": "VAR",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40116": {
+        "name": "VAR phase A",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40118": {
+        "name": "VAR phase B",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40120": {
+        "name": "VAR phase C",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40122": {
+        "name": "PF",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40124": {
+        "name": "PF phase A",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40126": {
+        "name": "PF phase B",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40128": {
+        "name": "PF phase C",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40130": {
+        "name": "Total Watt-hours Exported",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40132": {
+        "name": "Total Watt-hours Exported phase A",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40134": {
+        "name": "Total Watt-hours Exported phase B",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40136": {
+        "name": "Total Watt-hours Exported phase C",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40138": {
+        "name": "Total Watt-hours Imported",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40140": {
+        "name": "Total Watt-hours Imported phase A",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40142": {
+        "name": "Total Watt-hours Imported phase B",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40144": {
+        "name": "Total Watt-hours Imported phase C",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40146": {
+        "name": "Total VA-hours Exported",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40148": {
+        "name": "Total VA-hours Exported phase A",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40150": {
+        "name": "Total VA-hours Exported phase B",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40152": {
+        "name": "Total VA-hours Exported phase C",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40154": {
+        "name": "Total VA-hours Imported",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40156": {
+        "name": "Total VA-hours Imported phase A",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40158": {
+        "name": "Total VA-hours Imported phase B",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40160": {
+        "name": "Total VA-hours Imported phase C",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40162": {
+        "name": "Total VAR-hours Imported Q1",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40164": {
+        "name": "Total VAr-hours Imported Q1 phase A",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40166": {
+        "name": "Total VAr-hours Imported Q1 phase B",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40168": {
+        "name": "Total VAr-hours Imported Q1 phase C",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40170": {
+        "name": "Total VAr-hours Imported Q2",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40172": {
+        "name": "Total VAr-hours Imported Q2 phase A",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40174": {
+        "name": "Total VAr-hours Imported Q2 phase B",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40176": {
+        "name": "Total VAr-hours Imported Q2 phase C",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40178": {
+        "name": "Total VAr-hours Exported Q3",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40180": {
+        "name": "Total VAr-hours Exported Q3 phase A",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40182": {
+        "name": "Total VAr-hours Exported Q3 phase B",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40184": {
+        "name": "Total VAr-hours Exported Q3 phase C",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40186": {
+        "name": "Total VAr-hours Exported Q4",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40188": {
+        "name": "Total VAr-hours Exported Q4 Imported phase A",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40190": {
+        "name": "Total VAr-hours Exported Q4 Imported phase B",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40192": {
+        "name": "Total VAr-hours Exported Q4 Imported phase C",
+        "type": "float32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40194": {
+        "name": "Events",
+        "type": "bitfield32",
+        "size": 2,
+        "obis_code": "",
+        "fixed_value": ""
+    },
+    "40196": {
+        "name": "EndModel_ID",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": "FFFF"
+    },
+    "40197": {
+        "name": "EndModel_Length",
+        "type": "uint16",
+        "size": 1,
+        "obis_code": "",
+        "fixed_value": "0"
+    }
+}
