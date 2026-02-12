@@ -51,7 +51,13 @@ modbus.get_value_of_register = def(address)
             var str_bytes = bytes().fromstring(value).resize(2*item_size)
             return {"name": modbus_name, "bytes": str_bytes}
         else
-            var value = int(register.item("fixed_value"))
+            var value
+            if modbus_type == "float32"
+                var fv = register.item("fixed_value")
+                value = size(fv) > 0 ? real(fv) : 0.0
+            else
+                value = int(register.item("fixed_value"))
+            end
             var obis_code = register.item("obis_code")
             if size(obis_code) > 0
                 var entry = obiscode.get_smartmeter_code(obis_code)
@@ -76,8 +82,20 @@ modbus.get_value_of_register = def(address)
                 end
             end
             var item_size = register.item("size")
-            var int_bytes = bytes().add(int(value), -item_size*2)
-            return {"name": modbus_name, "bytes": int_bytes}
+            if modbus_type == "float32"
+                var float_bytes = bytes(-4)
+                float_bytes.setfloat(0, real(value))
+                # Reverse for big-endian (Modbus byte order)
+                var be_bytes = bytes(-4)
+                be_bytes[0] = float_bytes[3]
+                be_bytes[1] = float_bytes[2]
+                be_bytes[2] = float_bytes[1]
+                be_bytes[3] = float_bytes[0]
+                return {"name": modbus_name, "bytes": be_bytes}
+            else
+                var int_bytes = bytes().add(int(value), -item_size*2)
+                return {"name": modbus_name, "bytes": int_bytes}
+            end
         end
     else
         return nil

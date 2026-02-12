@@ -55,6 +55,32 @@ def test_get_available_register_should_pass()
     assert(value.item("name") == "EndModel_Length", "Assert: modbus.get_value_of_register should return a value 'EndModel_Length'")
 end
 
+def test_get_float32_register_should_pass()
+    setup()
+    var regs = sunspec.get_registers()
+
+    # Test float32 with fixed_value 1.0 → IEEE 754 big-endian: 0x3F800000
+    regs["99990"] = {"name": "TestFloat1", "type": "float32", "size": 2, "obis_code": "", "fixed_value": "1.0"}
+    var value = modbus.get_value_of_register("99990")
+    assert(value.item("name") == "TestFloat1", "Assert: name should be 'TestFloat1'")
+    assert(value.item("bytes") == bytes('3F800000'), "Assert: 1.0 should encode to 3F800000")
+
+    # Test float32 with fixed_value -1.5 → IEEE 754 big-endian: 0xBFC00000
+    regs["99991"] = {"name": "TestFloat2", "type": "float32", "size": 2, "obis_code": "", "fixed_value": "-1.5"}
+    value = modbus.get_value_of_register("99991")
+    assert(value.item("bytes") == bytes('BFC00000'), "Assert: -1.5 should encode to BFC00000")
+
+    # Test float32 with empty fixed_value → 0.0 → 0x00000000
+    regs["99992"] = {"name": "TestFloat3", "type": "float32", "size": 2, "obis_code": "", "fixed_value": ""}
+    value = modbus.get_value_of_register("99992")
+    assert(value.item("bytes") == bytes('00000000'), "Assert: empty fixed_value should encode to 00000000")
+
+    # Cleanup
+    regs.remove("99990")
+    regs.remove("99991")
+    regs.remove("99992")
+end
+
 def test_get_not_available_register_should_not_pass()
     setup()
     var value = modbus.get_value_of_register("40046")
@@ -63,6 +89,7 @@ end
 
 test_load_modbus_registers_should_pass()
 test_get_available_register_should_pass()
+test_get_float32_register_should_pass()
 test_get_not_available_register_should_not_pass()
 
 print("test_modbus passed")
