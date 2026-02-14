@@ -101,21 +101,21 @@
         "name": "Amps PhaseA",
         "type": "float32",
         "size": 2,
-        "obis_code": "",
+        "obis_code": "31.7.0",
         "fixed_value": ""
     },
     "40076": {
         "name": "Amps PhaseB",
         "type": "float32",
         "size": 2,
-        "obis_code": "",
+        "obis_code": "51.7.0",
         "fixed_value": ""
     },
     "40078": {
         "name": "Amps PhaseC",
         "type": "float32",
         "size": 2,
-        "obis_code": "",
+        "obis_code": "71.7.0",
         "fixed_value": ""
     },
     "40080": {
@@ -129,21 +129,21 @@
         "name": "Phase Voltage AN",
         "type": "float32",
         "size": 2,
-        "obis_code": "",
+        "obis_code": "32.7.0",
         "fixed_value": ""
     },
     "40084": {
         "name": "Phase Voltage BN",
         "type": "float32",
         "size": 2,
-        "obis_code": "",
+        "obis_code": "52.7.0",
         "fixed_value": ""
     },
     "40086": {
         "name": "Phase Voltage CN",
         "type": "float32",
         "size": 2,
-        "obis_code": "",
+        "obis_code": "72.7.0",
         "fixed_value": ""
     },
     "40088": {
@@ -185,28 +185,28 @@
         "name": "Watts",
         "type": "float32",
         "size": 2,
-        "obis_code": "",
+        "obis_code": "1.7.0",
         "fixed_value": ""
     },
     "40100": {
         "name": "Watts phase A",
         "type": "float32",
         "size": 2,
-        "obis_code": "",
+        "obis_code": "21.7.0",
         "fixed_value": ""
     },
     "40102": {
         "name": "Watts phase B",
         "type": "float32",
         "size": 2,
-        "obis_code": "",
+        "obis_code": "41.7.0",
         "fixed_value": ""
     },
     "40104": {
         "name": "Watts phase C",
         "type": "float32",
         "size": 2,
-        "obis_code": "",
+        "obis_code": "61.7.0",
         "fixed_value": ""
     },
     "40106": {
@@ -241,7 +241,7 @@
         "name": "VAR",
         "type": "float32",
         "size": 2,
-        "obis_code": "",
+        "obis_code": "3.7.0",
         "fixed_value": ""
     },
     "40116": {
@@ -276,7 +276,7 @@
         "name": "PF phase A",
         "type": "float32",
         "size": 2,
-        "obis_code": "",
+        "obis_code": "33.7.0",
         "fixed_value": ""
     },
     "40126": {
@@ -297,7 +297,7 @@
         "name": "Total Watt-hours Exported",
         "type": "float32",
         "size": 2,
-        "obis_code": "",
+        "obis_code": "2.8.0",
         "fixed_value": ""
     },
     "40132": {
@@ -325,7 +325,7 @@
         "name": "Total Watt-hours Imported",
         "type": "float32",
         "size": 2,
-        "obis_code": "",
+        "obis_code": "1.8.0",
         "fixed_value": ""
     },
     "40140": {
@@ -409,7 +409,7 @@
         "name": "Total VAR-hours Imported Q1",
         "type": "float32",
         "size": 2,
-        "obis_code": "",
+        "obis_code": "3.8.0",
         "fixed_value": ""
     },
     "40164": {
@@ -465,7 +465,7 @@
         "name": "Total VAr-hours Exported Q3",
         "type": "float32",
         "size": 2,
-        "obis_code": "",
+        "obis_code": "4.8.0",
         "fixed_value": ""
     },
     "40180": {
