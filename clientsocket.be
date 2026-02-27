@@ -48,6 +48,15 @@ class ClientSocket
         var bytesSent = self.socket.write(bytes_response)
         logger.logMsg(logger.lDebug, f"ClientSocket '{self.id}' sent {bytesSent} bytes in response")
         
+        # Clean up everything to avoid memory leaks
+        bytes_request = nil
+        bytes_response = nil
+        request = nil
+        response = nil
+
+        # Call garbage collector to free up memory
+        tasmota.gc()
+
         return true
     end
 
