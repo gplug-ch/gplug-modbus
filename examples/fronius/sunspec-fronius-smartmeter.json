@@ -1,80 +1,73 @@
 {
-    "40000": {
+    "40001": {
         "name": "SunSpec Identifier",
         "type": "uint16",
         "size": 1,
         "obis_code": "",
         "fixed_value": "5375"
     },
-    "40001": {
+    "40002": {
         "name": "SunSpec Identifier",
         "type": "uint16",
         "size": 1,
         "obis_code": "",
         "fixed_value": "6E53"
     },
-    "40002": {
+    "40003": {
         "name": "C_ID",
         "type": "uint16",
         "size": 1,
         "obis_code": "",
         "fixed_value": "1"
     },
-    "40003": {
+    "40004": {
         "name": "C_L",
         "type": "uint16",
         "size": 1,
         "obis_code": "",
         "fixed_value": "65"
     },
-    "40004": {
+    "40005": {
         "name": "C_Mn",
         "type": "string",
         "size": 16,
         "obis_code": "",
         "fixed_value": "Fronius"
     },
-    "40020": {
+    "40021": {
         "name": "C_Md",
         "type": "string",
         "size": 16,
         "obis_code": "",
         "fixed_value": ""
     },
-    "40036": {
+    "40037": {
         "name": "C_Opt",
         "type": "string",
         "size": 8,
         "obis_code": "",
         "fixed_value": ""
     },
-    "40044": {
+    "40045": {
         "name": "C_Vr",
         "type": "string",
         "size": 8,
         "obis_code": "",
         "fixed_value": ""
     },
-    "40052": {
+    "40053": {
         "name": "C_SN",
         "type": "string",
         "size": 16,
         "obis_code": "",
         "fixed_value": ""
     },
-    "40068": {
+    "40069": {
         "name": "C_DA",
         "type": "uint16",
         "size": 1,
         "obis_code": "",
         "fixed_value": ""
-    },
-    "40069": {
-        "name": "Alignment",
-        "type": "uint16",
-        "size": 1,
-        "obis_code": "",
-        "fixed_value": "FFFF"
     },
     "40070": {
         "name": "M213_ID",
